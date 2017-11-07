@@ -1,0 +1,93 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #ffffff;
+	width: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: "Montserrat", sans-serif;
+}
+a, a:hover, a:focus{
+	text-decoration: none;
+}
+.flexHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+}
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	height: 80px;
+}
+nav a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	margin-top: 20px;
+	color: #191919;
+	transition: color .3s;
+}
+nav a:hover{
+	color: #10C9C3;
+	transition: color .3s;
+}
+/* section desc */
+#desc{
+	background-color: #F6F6F6;
+}
+.flexDesc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
+#desc h1{
+	font-size: 2rem;
+	margin: 0;
+	padding: 10% 0 2% 0;
+}
+#desc span{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 1.2rem;
+	padding: 2% 0 10% 0;
+}
+/* sesction galery */
+#galery .glWidth{
+	width: 100%;
+}
+.flexGl{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+#galery .mrgNon{
+	margin: 0;
+	padding: 0;
+}
+.sheathG{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color:  rgba(131,131,131, .7);
+	z-index: 2;
+}
+.sheathW{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color:  rgba(221,221,221, .7);
+	z-index: 2;
+}
+.coverImg img{
+	width: 100%;
+}
