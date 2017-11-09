@@ -441,3 +441,6 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 #project .descInfAbt p{
 	font-size: 1.1rem;
 }
+#project .hid{
+	display: none;
+}
