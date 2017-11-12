@@ -30,13 +30,13 @@ slider();
 
 /*Функция POPUP. На блок который надо увеличивать необходимо установить name="box"*/
 function popup(){
-	$(".coverImg").on('click', function(){
+	$(".box").on('click', function(){
 		var copy = $(this).clone();
 		console.log($(this).parent().append('<div class="popup"></div>'));
 		$(copy).appendTo(".popup");
 		$(".popup").append('<i class="fa fa-times"></i>');
 		$(document).mouseup(function (e){ // событие клика по веб-документу
-			var div = $(".coverImg");
+			var div = $(".box");
 			var cl = $(".popup i[class=pe-7s-close]"); // тут указываем ID элемента
 			if (!div.is(e.target) && div.has(e.target).length === 0){ // и не по его дочерним элементам
 				$("div.popup").remove(); // скрываем его
@@ -53,3 +53,27 @@ function popup(){
 	});
 }
 popup();
+/* Всплывающие окно */
+function popButton(){
+	$(".linkButton").on('click', function(){
+		$(".windFree").removeClass("hid");
+
+
+		$(document).mouseup(function (e){ // событие клика по веб-документу
+			var div = $("#sentMess");
+			var cl = $("i[class=pe-7s-close]"); // тут указываем ID элемента
+			if (!div.is(e.target) && div.has(e.target).length === 0){ // и не по его дочерним элементам
+				$(".windFree").addClass("hid"); // скрываем его
+			}
+			if(cl.is(e.target) && cl.has(e.target).length ===0){
+				$(".windFree").addClass("hid");
+			}
+		});
+	});
+	$(document).bind('keydown', function(eventObject){
+		if(eventObject.keyCode == 27){
+			$(".windFree").addClass("hid");
+		}
+	});
+}
+popButton();
