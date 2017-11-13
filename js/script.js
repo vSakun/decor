@@ -77,3 +77,19 @@ function popButton(){
 	});
 }
 popButton();
+function sentMessWin(){
+	$("#sentMess > .linkButton").on('click', function(){
+		$(".sentMessOff").removeClass("hid");
+	});
+}
+sentMessWin();
+/* паралакс наклонного блока */
+$(window).scroll(function(){
+	var st = $(this).scrollTop();
+	$("#rotatBlok img").css({"transform":"translate(0%,-"+ st/30 +"%)"})
+});
+/* Прилоадер */
+$(window).load(function(){
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(250).fadeOut("slow");
+	});

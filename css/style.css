@@ -1,6 +1,7 @@
 body{
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 header{
 	background-color: #ffffff;
@@ -14,6 +15,7 @@ a, a:hover, a:focus{
 }
 section{
 	padding: 3% 0;
+	position: relative;
 }
 .flexHeader{
 	display: flex;
@@ -261,7 +263,7 @@ footer p{
 	padding: 0;
 }
 /* section aboutMy */
-#aboutMy, #project{
+#aboutMy, #project, #moreInf, #rotatBlok{
 	padding: 0;
 	margin: 0;
 }
@@ -271,10 +273,10 @@ footer p{
 #aboutMy p{
 	color: #797979;
 }
-#aboutMy .container, #project .container{
+#aboutMy .container, #project .container, #moreInf .container{
 	width: 100%;
 }
-#aboutMy .flexL, #project .flexL{
+#aboutMy .flexL, #project .flexL, #moreInf .flexL{
 	background-color: #E2E2E2;
 	display: flex;
 	flex-direction: row;
@@ -283,7 +285,7 @@ footer p{
 	margin: 0;
 	padding: 0;
 }
-#aboutMy .flexR, #project .flexR{
+#aboutMy .flexR, #project .flexR, #moreInf .flexR{
 	background-color: #F5F5F5;
 	display: flex;
 	flex-direction: column;
@@ -301,6 +303,31 @@ footer p{
 	width: 10%;
 	display: block;
 }
+#rotatBlok{
+	z-index: 3;
+	transform: skewY(-3deg);
+	margin: -3% 0 -1% 0;
+	overflow: hidden;
+
+}
+#rotatBlok .container{
+	background-color: rgba(0,192,186, .4);
+	width: 100%;
+	box-shadow: inset 0px 0px 35px 3px rgba(0,0,0,0.5);
+}
+#rotatBlok img{
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: -20%;
+}
+#rotatBlok .descInfAbt{
+	position: relative;
+}
+#moreInf{
+	z-index: -1;
+	margin-top: -3%;
+}
 /* section ndProj */
 #ndProj h2{
 	text-align: center;
@@ -315,7 +342,7 @@ footer p{
 	text-shadow: 1px 1px 1px #000000;
 	width: 30%;
 	margin: 0 auto;
-	border: 3px solid #00CAC4;
+	border: 10px solid #00CAC4;
 }
 #ndProj .linkButton, #contact .linkButton{
 	border: 1px solid #00CAC4;
@@ -342,7 +369,7 @@ footer p{
 	z-index: 10;
 	top: 0;
 	left: 0;
-	background-color: rgba(150, 150, 150, .9);
+	background-color: rgba(150, 170, 170, .9);
 	width: 100%;
 	height: 100%;
 }
@@ -363,7 +390,15 @@ footer p{
 	width: 90%;
 	font-size: 3rem;
 }
-
+.sentMessOff{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
 /* section contact */
 #contact{
 	background-color: #F5F5F5;
@@ -486,10 +521,6 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 	align-items: center;
 }
 /* section project */
-#project .pe-7s-close:hover{
-	transform: rotate(365deg);
-	transition: transform 1s;
-}
 .control{
 	width: 100%;
 	background-color: #FFFFFF;
@@ -505,7 +536,6 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 .centralBlok i{
 	cursor: pointer;
 	transition: color .5s, transform 1s;
-
 }
 .prevBlok, .nextBlok{
 	width: 10%;
@@ -516,7 +546,6 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 	cursor: pointer;
 }
 .prevBlok p, .nextBlok p{
-	width: 10%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -525,12 +554,18 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 	text-transform: uppercase;
 	color: #424242;
 	margin: 0 3%;
-	transition: color .5s;
+	transition: color .5s, transform .5s;
 	letter-spacing: 1px;
 }
-.prevBlok:hover > p, .nextBlok:hover > p, .centralBlok:hover i{
+.prevBlok:hover > p, .nextBlok:hover > p{
 	color: #00CAC4;
-	transition: color .5s;
+	transition: color .5s, transform .5s;
+	transform: scale(1.2,1.2);
+}
+.centralBlok:hover i{
+	transform: rotate(365deg) scale(2,2);
+	color: #00CAC4;
+	transition: transform 1s, color .5s;
 }
 #project .descInfAbt span{
 	font-weight: 600;
