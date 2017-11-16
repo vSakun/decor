@@ -305,18 +305,20 @@ footer p{
 }
 #rotatBlok{
 	z-index: 3;
-	transform: skewY(-3deg);
 	margin: -3% 0 -1% 0;
 	overflow: hidden;
-
+	clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
 }
 #rotatBlok .container{
 	background-color: rgba(0,192,186, .4);
 	width: 100%;
-	box-shadow: inset 0px 0px 35px 3px rgba(0,0,0,0.5);
+	height: 100%;
+	padding: 3% 0;
+	box-shadow: inset 0px 0px 100px 25px rgba(0,0,0,0.5);
 }
 #rotatBlok img{
 	position: absolute;
+	top: 0px;
 	width: 100%;
 	z-index: -1;
 	top: -20%;
