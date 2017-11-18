@@ -1,3 +1,4 @@
+/* Slider */
 function slider(){
 	$(".control .nextBlok").on('click', function(){
 		var slide = $("#project [class=row]");
@@ -89,7 +90,55 @@ $(window).scroll(function(){
 	$("#rotatBlok img").css({"transform":"translate(0%,-"+ st/20 +"%)"})
 });
 /* Прилоадер */
-$(window).load(function(){
+$(document).ready(function(){
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(250).fadeOut("slow");
 });
+/* Buttom up*/
+/*Кнопка вверх с плавным появлением и плавным скролом*/
+/*topBottom - id элемента, на который надо нажать что бы вернуться на верх*/
+document.onscroll = my_func;
+function my_func(){
+	var sc = $(document).scrollTop();/*текуще значение скрола*/
+	if(sc > 500 && $("#topBottom").css("display") != "block"){ /*если проскройлили более 500 пикселей И кнопка скрыта то выполнять*/
+		$("#topBottom").css({"display":"block"});
+		block_in(0.1,$("#topBottom")); /*устанавливается первым параметром значение прозрачности, вторым на какой элемент будет применена функиця*/
+	}
+	else if( sc < 500 && $("#topBottom").css("display") != "none"){
+		block_out($("#topBottom").css("opacity"),$("#topBottom"));
+	}
+}
+function toTop(){/*данная вункция вызывается из html разментки по событию onclick на элементе с id topBottom*/
+	var root = $(document);/*выбрали весь документ*/
+	var scrol = root.scrollTop();/*значение скрола на данный момент*/
+	scrol -=50;/*текущее значение скрола -10px*/
+	root.scrollTop(scrol);/*проскролить до указанного значения*/
+	if(scrol > 0){
+		setTimeout(toTop,1);/*запуск рекурсии с интервалом в 1 милисекунду*/
+	}
+}
+function block_in(op,elem){
+	elem.css({"opacity":op})/*установить переданное в функцию значение прозрачности*/
+	op += 0.3;/*шаг изменения прозрачности*/
+	if(op < 1){
+		setTimeout(
+			function(){
+				block_in(op,elem)/*запуск рекурсии через 100мс*/
+			},
+			100);
+	}
+}
+function block_out(op,elem){
+	elem.css({"opacity":op})
+	op -= 0.3;
+	if(op > 0){
+		setTimeout(
+			function(){
+				block_out(op,elem)
+			},
+			100);
+	}
+	else{
+		$("#topBottom").css({"display":"none"});/*после того как прозрачность стала 0, убрать элемент со страницы*/
+	}
+}
