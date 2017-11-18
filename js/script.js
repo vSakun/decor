@@ -90,7 +90,7 @@ $(window).scroll(function(){
 	$("#rotatBlok img").css({"transform":"translate(0%,-"+ st/20 +"%)"})
 });
 /* Прилоадер */
-$(document).ready(function(){
+$(window).load(function(){
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(250).fadeOut("slow");
 });
