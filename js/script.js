@@ -1,4 +1,7 @@
 /* Slider */
+$(document).ready(function(){
+	$("#project .container .row:gt(0)").addClass("vis").addClass("hid");
+});
 function slider(){
 	$(".control .nextBlok").on('click', function(){
 		var slide = $("#project [class=row]");
@@ -89,11 +92,6 @@ $(window).scroll(function(){
 	var st = $(this).scrollTop();
 	$("#rotatBlok img").css({"transform":"translate(0%,-"+ st/20 +"%)"})
 });
-/* Прилоадер */
-$(window).load(function(){
-	$(".loader_inner").fadeOut();
-	$(".loader").delay(250).fadeOut("slow");
-});
 /* Buttom up*/
 /*Кнопка вверх с плавным появлением и плавным скролом*/
 /*topBottom - id элемента, на который надо нажать что бы вернуться на верх*/
@@ -142,6 +140,11 @@ function block_out(op,elem){
 		$("#topBottom").css({"display":"none"});/*после того как прозрачность стала 0, убрать элемент со страницы*/
 	}
 }
+/* Прилоадер */
+$(window).load(function(){
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(250).fadeOut("slow");
+});
 /*Анимация блоков на странице*/
 	$(".animation_2").animated("slideInDown", "slideOutUp");
 	$(".animation_4").animated("pulse", "pulse");
