@@ -25,16 +25,16 @@
 	.flexFoot .flexCol{
 		flex-direction: row;
 	}
-	.popup .coverImg{
+	#galery .popup .coverImg{
 		flex-direction: column;
 	}
-	.popup .deskGlrImg{
+	#galery .popup .deskGlrImg{
 		width: 90%;
 	}
-	.popup img{
+	#galery .popup img{
 		width: 100%;
 	}
-	.popup .deskGlrImg p{
+	#galery .popup .deskGlrImg p{
 		margin: 0;
 		padding: 0;
 	}

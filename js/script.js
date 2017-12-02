@@ -142,3 +142,11 @@ function block_out(op,elem){
 		$("#topBottom").css({"display":"none"});/*после того как прозрачность стала 0, убрать элемент со страницы*/
 	}
 }
+/*Анимация блоков на странице*/
+	$(".animation_2").animated("slideInDown", "slideOutUp");
+	$(".animation_4").animated("pulse", "pulse");
+	$(".animation_3").animated("flipInX", "flipOutX");
+	$(".animation_5").animated("fadeInDown", "fadeOutUp");
+	$(".animation_6").animated("fadeInRight", "fadeOutRight");
+	$(".animation_8").animated("fadeInLeft", "fadeOutLeft");
+	$(".animation_7").animated("bounceIn","bounceOut");

@@ -1,3 +1,13 @@
+/*
+Theme Name: Decor&Design
+Theme URI: https://github.com/vSakun
+Author: Sakun Vitali
+Author URI: https://github.com/vSakun
+Description: Локоничная тема для человка занимающегося декором
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: //www.gnu.org/licenses/gpl-2.0.html
+*/
 body{
 	margin: 0;
 	padding: 0;
@@ -12,6 +22,7 @@ h1, h2, h3, h4, h5, h6{
 }
 a, a:hover, a:focus{
 	text-decoration: none;
+	outline: none;
 }
 section{
 	padding: 3% 0;
@@ -265,6 +276,7 @@ footer p{
 }
 #record p i{
 	font-size: 4rem;
+	padding-right: 10px;
 }
 .flexRec{
 	display: flex;
@@ -326,6 +338,10 @@ footer p{
 .flexR img{
 	width: 10%;
 	display: block;
+	position: relative;
+	height: 10%;
+	margin: 0 auto;
+	padding-top: 5%;
 }
 #rotatBlok{
 	margin: -3% 0 -1% 0;
@@ -543,6 +559,10 @@ textarea{
 	letter-spacing: 2px;
 	text-align: center;
 }
+#map_hook{
+	display: none;
+	opacity: 0;
+}
 /* section services */
 #services{
 	background-color: #F5F5F5;
@@ -631,7 +651,7 @@ textarea{
 	letter-spacing: 1px;
 }
 #project .descInfAbt p{
-	font-size: 1rem;
+	font-size: 1.1rem;
 }
 #project .hid, #ndProj .hid{
 	display: none;
@@ -642,6 +662,7 @@ textarea{
 }
 #project .row{
 	transition: opacity .5s;
+	background-color: #F5F5F5;
 }
 /* Preloader */
 .loader {
@@ -672,7 +693,7 @@ textarea{
 /* topBottom */
 #topBottom{
 	position: fixed;
-	bottom: 30%;
+	bottom: 20%;
 	right: 3%;
 	border-radius: 50%;
 	display: none;
